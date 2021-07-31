@@ -1,0 +1,23 @@
+.box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  background-color: gray;
+  margin-bottom: 1rem;
+}
+
+.red-border {
+  border-color: red;
+}
+
+.yellow-background {
+  background-color: yellow;
+}
+
+.purple-border {
+  border-color: purple;
+}
+
+.white-background {
+  background-color: white;
+}
