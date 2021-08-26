@@ -1,3 +1,13 @@
+:root {
+  --text-color: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .box {
   width: 200px;
   height: 200px;

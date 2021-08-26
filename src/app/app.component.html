@@ -2,6 +2,15 @@
 
 <button (click)="isDanger = !isDanger">Toggle border</button>
 <button (click)="isWarning = !isWarning">Toggle background</button>
+<!--
+  [class.ten-class]
+  [class] = "array"
+  [class] = "Object"
+  [class] = "variable"
+ -->
+ <br>
+ <h1>[class] = "variable"</h1>
+ <div class="box" [class]="classBox"></div>
 <br>
 <!-- Array class -->
 <div class="box" [class]="['purple-border','white-background']"></div>
@@ -19,5 +28,6 @@
   [style.css-variable]
 
  -->
+ <p [style.--text-color]="isDanger ? 'red' : 'blue'" [style]="{color: 'var(--text-color)'}">Welcome to angular!</p>
 <p [style.color]="'purple'" [style.backgroundColor]="'yellow'" [style.fontSize.rem]="2">Welcome to angular!</p>
 <p [style]="{color:'red', backgroundColor: 'blue', fontSize: '20px'}">Welcome to angular!</p>
