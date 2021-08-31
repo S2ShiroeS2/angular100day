@@ -14,6 +14,7 @@ export class AppComponent {
     }
 
     Increase() {
-        this.numArr.push(this.count++);
+        this.count++
+        this.numArr.push(this.count);
     }
 }
