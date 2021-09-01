@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
+import { InfoCountryService } from './services/InfoCountry';
+import { LoggerService } from './services/loggerService';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [InfoCountryService, LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

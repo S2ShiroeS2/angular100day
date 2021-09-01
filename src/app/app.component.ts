@@ -1,23 +1,21 @@
 import { Component } from '@angular/core';
 import { Country } from './modules/country/Country';
 import { InfoCountryService } from './services/InfoCountry';
+import { LoggerService } from './services/loggerService';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    providers: [InfoCountryService],
+    // providers: [InfoCountryService, LoggerService],
 })
 export class AppComponent {
     countries!: Country[];
 
-    constructor(private infoCountryService: InfoCountryService) {
-    }
+    constructor(private infoCountryService: InfoCountryService) {}
 
     ngOnInit(): void {
         this.getInfoCountry();
-        console.log(this.countries);
-
     }
 
     getInfoCountry() {
