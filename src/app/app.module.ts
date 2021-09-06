@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { SignInComponent } from './sign-in/sign-in.component';
 
@@ -18,7 +18,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 		MatInputModule,
 		MatFormFieldModule,
 		MatCheckboxModule,
-		FormsModule
+		ReactiveFormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],

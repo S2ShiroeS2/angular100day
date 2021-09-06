@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {
+	AbstractControl,
+	AsyncValidatorFn,
+	FormBuilder,
+	FormControl,
+	FormGroup,
+	NgForm,
+	ValidationErrors,
+	ValidatorFn,
+	Validators,
+} from '@angular/forms';
+import { Observable, of } from 'rxjs';
 
 @Component({
 	selector: 'app-sign-in',
@@ -7,18 +18,32 @@ import { NgForm } from '@angular/forms';
 	styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent implements OnInit {
-	userInfo = {
-		userName: 'Angular',
-		password: 'password',
-		rememberMe: true,
-	};
-	usernamePattern = /^[a-z]{6,32}$/i;
-	passwordPattern = /^(?=.*[!@#$%^&*]+)[a-z0-9!@#$%^&*]{6,32}$/;
-	constructor() {}
+	signInForm!: FormGroup;
+	constructor(private formBuilder: FormBuilder) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.signInForm = this.formBuilder.group({
+			username: [
+				'',
+				Validators.compose([
+					Validators.required,
+					Validators.minLength(6),
+					Validators.pattern(/^[a-z]{6,32}$/i),
+				]),
+			],
+			password: [
+				'',
+				Validators.compose([
+				  Validators.required,
+				  Validators.minLength(6),
+				  Validators.pattern(/^(?=.*[!@#$%^&*]+)[a-z0-9!@#$%^&*]{6,32}$/),
+				]),
+			  ],
+			rememberMe: false,
+		});
+	}
 
-	onSubmit(form: NgForm): void {
-		console.log(form);
+	onSubmit() {
+		console.log(this.signInForm);
 	}
 }
